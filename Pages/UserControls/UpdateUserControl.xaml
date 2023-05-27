@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="Sign_Up_Form.Pages.UserControls.UpdateUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sign_Up_Form.Pages.UserControls"
+               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="642.5">
+    <Grid>
+        <StackPanel>
+     
+            <TextBox
+                          
+                            Width="300"
+                            x:Name="user_name"
+                            MaxWidth="600"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Center"
+                            materialDesign:HintAssist.Hint="Nom *"
+                            AcceptsReturn="True"
+                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                            TextWrapping="Wrap" />
+            <TextBox
+                             Width="300"
+                            x:Name="user_first_name"
+                            MaxWidth="600"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Center"
+                            materialDesign:HintAssist.Hint="Prenom *"
+                            AcceptsReturn="True"
+                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                            TextWrapping="Wrap" />
+            <TextBox
+                                Width="300"
+                            x:Name="function"
+                            MaxWidth="600"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Center"
+                            materialDesign:HintAssist.Hint="Fonction *"
+                            AcceptsReturn="True"
+                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                            TextWrapping="Wrap" />
+
+            <TextBox
+                                Width="300"
+                            x:Name="telephone"
+                            MaxWidth="600"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Center"
+                            materialDesign:HintAssist.Hint="Telephone *"
+                            AcceptsReturn="True"
+                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                            TextWrapping="Wrap" />
+            <TextBox
+                                Width="300"
+                            x:Name="login"
+                            MaxWidth="600"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Center"
+                            materialDesign:HintAssist.Hint="Login *"
+                            AcceptsReturn="True"
+                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                            TextWrapping="Wrap" />
+            <TextBox
+                            Width="300"
+                            x:Name="email"
+                            MaxWidth="600"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Center"
+                            materialDesign:HintAssist.Hint="Email *"
+                            AcceptsReturn="True"
+                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                            TextWrapping="Wrap" />
+
+            <Button Content="Enregistrer" Margin="0,10,0,0"  Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Click_update_user"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

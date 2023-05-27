@@ -1,0 +1,34 @@
+﻿<Window x:Class="Sign_Up_Form.Pages.Diolog.DetailUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sign_Up_Form.Pages.Diolog"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Title="Detail utilisateur" Height="450" Width="800">
+    <Grid Background="#FFDEDEDE">
+        <Grid x:Name="GridMain" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="225,0,-0.4,-0.2"/>
+        <Grid x:Name="GridMenu" Width="225" HorizontalAlignment="Left" Background="White">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
+            </Grid.Effect>
+            <StackPanel>
+                <ListView x:Name="ListViewMenu" Foreground="Black" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
+               
+                    <ListViewItem x:Name="ItemUpdateEmploye" Height="60" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Modifier les informations" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ItemAccessRight" Height="60" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Modifier les accès" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+            <Button Content="Fermer" HorizontalAlignment="Left" Margin="56,343,0,0" VerticalAlignment="Top" Width="125" Click="Click_close_user_detail"/>
+        </Grid>
+    </Grid>
+</Window>

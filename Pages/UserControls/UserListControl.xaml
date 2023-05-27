@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="Sign_Up_Form.Pages.UserControls.UserListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Sign_Up_Form.Pages.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="363*"/>
+            <ColumnDefinition Width="37*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="searchUtilisateur" Background="White" VerticalAlignment="Top" Margin="0,52,207.4,0"  Height="34" />
+
+        <DataGrid Name="listeUtilisateurs" ItemsSource="{Binding Products}" AutoGenerateColumns="False" Grid.ColumnSpan="2" Margin="2,91,0,-0.4" IsReadOnly="True" Background="White" AlternatingRowBackground="#FFF3FABC" AlternationCount="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id utilisateur"  Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Nom" Binding="{Binding Nom}" />
+                <DataGridTextColumn Header="Prenom" Binding="{Binding Prenom}" />
+                <DataGridTextColumn Header="Login" Binding="{Binding Login}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="Fonction" Binding="{Binding Fonction}" />
+                <DataGridTextColumn Header="Date Modification" Binding="{Binding DateCreation}" />
+                <DataGridTextColumn Header="Date Modification" Binding="{Binding DateDerniereMaj}" />
+                <DataGridTemplateColumn x:Name="DetailsAgenceAction" Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="BtnView" Content="Détails" Click="user_detail_click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="modifier_user" Header="Action" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="reset_password" Background="Green" Content="Reninitialiser le mot de passe" Click="Click_reset_password" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+                
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button  Background="#FF047D29" Name="createAgenceBTN" Content="Ajouter" HorizontalAlignment="Right" Margin="0,52,10,0" VerticalAlignment="Top"  Width="100" Height="34" Grid.ColumnSpan="2" Click="open_create_user_form" />
+        <Label Content="Gestion des Utilisateurs" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Height="47" Width="337"/>
+
+    </Grid>
+
+
+</UserControl>

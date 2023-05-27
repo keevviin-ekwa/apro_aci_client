@@ -1,0 +1,132 @@
+﻿<UserControl x:Class="Sign_Up_Form.Pages.MatiereProduits.MatiereProduitList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sign_Up_Form.Pages.MatiereProduits"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="DeepPurple" SecondaryColor="Lime" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+    
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="321*"/>
+            <ColumnDefinition Width="37*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox
+                SelectionChanged="selected_item_change"
+                 Background="#F5F5F5"
+                 x:Name="products_list"
+                 DisplayMemberPath="Designation"
+                 FontSize="15"
+                  VerticalAlignment="Top" Margin="10,40,300,0"  Height="80" Grid.ColumnSpan="2"
+                 materialDesign:HintAssist.Hint="Selectionner un produit"
+                 IsEnabled="{Binding Path=IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
+                 Style="{StaticResource MaterialDesignFilledComboBox}">
+                 
+        </ComboBox>
+       
+        <materialDesign:DialogHost x:Name="create_form" CloseOnClickAway="True" Grid.ColumnSpan="2" >
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel VerticalAlignment="Top" Width="700" Height="400">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                    </Grid>
+                    <Border Grid.Row="0" Background="#541690" Height="30">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"  FontWeight="Bold" FontSize="15">AJOUT</TextBlock>
+                    </Border>
+                    <Border Grid.Row="2"  VerticalAlignment="Center">
+                        <StackPanel >
+                            <ComboBox x:Name="product_list"
+                                  Width="600"
+                                  SelectionChanged="on_select_product_change"
+                                  DisplayMemberPath="Designation"
+                                  materialDesign:HintAssist.Hint="Selectionner le produit"
+                                  materialDesign:TextFieldAssist.HasClearButton="True"
+                                  IsEditable="True"
+                  
+                                  Style="{StaticResource MaterialDesignFilledComboBox}">
+
+
+
+                            </ComboBox>
+                            <ComboBox x:Name="matiere_list"
+                                  Width="600"
+                                  DisplayMemberPath="Designation"
+                                  materialDesign:HintAssist.Hint="Matière première"
+                                  materialDesign:TextFieldAssist.HasClearButton="True"
+                                  IsEditable="True"
+                                  Style="{StaticResource MaterialDesignFilledComboBox}">
+
+
+
+                            </ComboBox>
+                            <TextBox
+                            x:Name="contribution_gf"
+                            MaxWidth="600"
+                            Margin="0,30,0,0"
+                            VerticalAlignment="Center"
+                            materialDesign:HintAssist.Hint="Contribution GF (%) *"
+                            AcceptsReturn="True"
+                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                            TextWrapping="Wrap" />
+                            <TextBox
+                            x:Name="contribution_pf"
+                            MaxWidth="600"
+                            Margin="0,30,0,0"
+                            VerticalAlignment="Center"
+                            materialDesign:HintAssist.Hint="Contribution PF (%) *"
+                            AcceptsReturn="True"
+                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                            TextWrapping="Wrap" />
+                            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
+                                <Button VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,52,25,0" Grid.ColumnSpan="2" Content="Enregistrer" Click="save_click" />
+                                <Button VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,52,25,0" Grid.ColumnSpan="2" Background="Red"  Content="Annuler" Click="cancel_click" />
+
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+            <!-- put the content over which the dialog is shown here (e.g. your main window grid)-->
+        </materialDesign:DialogHost>
+        <DataGrid Name="listeMatieres" ItemsSource="{Binding matiereProduits}" AutoGenerateColumns="False" Grid.ColumnSpan="3" Margin="2,125,0,0" IsReadOnly="True" Background="White" AlternatingRowBackground="#FFF3FABC" AlternationCount="2" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id "  Binding="{Binding MatiereId}"/>
+                <DataGridTextColumn Header="Produit" Binding="{Binding Produit.Designation}" />
+                <DataGridTextColumn Header="Matière Premiere" Binding="{Binding Matiere.Designation}" />
+                <DataGridTextColumn Header="Contribution GF" Binding="{Binding ContributionMatiereGF}" />
+                <DataGridTextColumn Header="Contribution PF" Binding="{Binding ContributionMatierePF}" />
+
+                <DataGridTemplateColumn x:Name="ExportStatistiquesAgenceAction" Header="Action" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="ExportStatistiquesAgence" Background="Green" Content="Editer"  />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Visibility="Hidden" Background="#FF047D29" Name="createAgenceBTN" Content="Créer une agence" HorizontalAlignment="Right" Margin="0,52,0,0" VerticalAlignment="Top"  Width="195" Height="34" Grid.ColumnSpan="2" Grid.Column="1" />
+        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,52,22,0" Grid.ColumnSpan="2" Grid.Column="1" Click="open_create_form" >Ajouter</Button>
+        <Label Content="Contribution par matière Première" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Height="47" Width="337" Grid.ColumnSpan="2"/>
+
+
+        <materialDesign:Snackbar x:Name="snack_bar_message" Grid.Column="1" HorizontalAlignment="Left" Margin="135,0,0,0">
+            <materialDesign:SnackbarMessage Content="" />
+        </materialDesign:Snackbar>
+    </Grid>
+</UserControl>

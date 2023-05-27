@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Sign_Up_Form.Pages.UserControls.UserwithAccessRigthControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sign_Up_Form.Pages.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid RenderTransformOrigin="0.558,0.476">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="363*"/>
+            <ColumnDefinition Width="37*"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Name="listUtilisateurs" ItemsSource="{Binding}" AutoGenerateColumns="False" Grid.ColumnSpan="2" Margin="0,52,0,-0.4" IsReadOnly="True" Background="White" AlternatingRowBackground="#FF8FDAF6" AlternationCount="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nom"  Binding="{Binding Nom}"/>
+                <DataGridTextColumn Header="Prenom" Binding="{Binding Prenom}" />
+                <DataGridTemplateColumn  Header="Droits d'accès">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding DroitAcces}" TextWrapping="Wrap" MaxWidth="200"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="AddAccessRight" Content="Ajouter" Click="add_acces_rigth_click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="DeleteAccessRight" Background="Red" Content="Retirer un accès" Click="remove_acces_rigth_click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Gestion des droits d'accès" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Height="47" Width="337"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,63 @@
+﻿<Window x:Class="Sign_Up_Form.Pages.Diolog.EditStockDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sign_Up_Form.Pages.Diolog"
+           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Title="Modifier le stock" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <DatePicker
+                                
+                                x:Name="date_stock"
+                                Width="600"
+                                Margin="0,30,0,0"
+                                materialDesign:HintAssist.Hint="Selectionner un mois"
+                                materialDesign:TextFieldAssist.HasClearButton="True"
+                                Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Grid.ColumnSpan="2" >
+
+
+            </DatePicker>
+
+
+               <ComboBox x:Name="matiere_list"
+                         
+                                  Width="600"
+                                   Margin="0,30,0,0"
+                                  DisplayMemberPath="Designation"
+                                  materialDesign:HintAssist.Hint="Matière première"
+                                  materialDesign:TextFieldAssist.HasClearButton="True"
+                                  IsEditable="True"
+                                  Style="{StaticResource MaterialDesignFilledComboBox}">
+
+            </ComboBox>
+            <TextBox
+                                x:Name="stock_debut"
+                                MaxWidth="600"
+                                Margin="0,30,0,0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="Stock debut (En Tonne) *"
+                                AcceptsReturn="True"
+                                Style="{StaticResource MaterialDesignFilledTextBox}"
+                                TextWrapping="Wrap" />
+            <TextBox
+                                x:Name="stock_fin"
+                                MaxWidth="600"
+                                Margin="0,30,0,0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="Stock fin (En Tonne) *"
+                                AcceptsReturn="True"
+                                Style="{StaticResource MaterialDesignFilledTextBox}"
+                                TextWrapping="Wrap" />
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
+                <Button VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,52,25,0" Grid.ColumnSpan="2" Content="Enregistrer"  />
+                <Button VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,52,25,0" Grid.ColumnSpan="2" Background="Red"  Content="Annuler"  />
+
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>
