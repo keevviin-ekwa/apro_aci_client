@@ -18,6 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Sign_Up_Form.Pages.Objectifs
 {
     /// <summary>
@@ -79,6 +80,18 @@ namespace Sign_Up_Form.Pages.Objectifs
             {
                 MessageBox.Show("Remplissez tous les champs");
             }
+
+            try
+            {
+                var obGF = double.Parse(objectif_grand_format.Text);
+                var obPF = double.Parse(objectif_petit_format.Text);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Veuillez saisir des valeurs numériques");
+            }
+
+           
 
 
             Produit produit = (Produit)produit_list.SelectedItem;
@@ -183,12 +196,7 @@ namespace Sign_Up_Form.Pages.Objectifs
             create_goal_form.IsOpen = false;
         }
 
-        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
-        {
-            Regex regex = new Regex("[^0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
-        }
-
+       
         private void edit_objectif(object sender, RoutedEventArgs e)
         {
             Objectif objectif = (Objectif)((Button)e.Source).DataContext;

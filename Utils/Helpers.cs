@@ -56,6 +56,49 @@ namespace Sign_Up_Form.Utils
             log.Close();
         }
 
+        public enum ResponseStatus
+        {
+            ERROR,
+            SUCCESSFUL,
+            PENDING,
+            INITIATED,
+            FAILED,
+            CONFLICT
+        }
+
+        
+
+        public enum AppAccessRights
+        {
+            ADMIN,
+            ADD_USER,
+            UPDATE_USER,
+            DELETE_USER,
+            VIEW_USER_LIST,
+            CREATE_PRODUCT,
+            EDIT_PRODUCT,
+            DELETE_PRODUCT,
+            VIEW_PRODUCT_LIST,
+            CREATE_MATIERE,
+            EDIT_MATIERE,
+            DELETE_MATIERE,
+            VIEW_MATIERE_LIST,
+            CREATE_STOCK,
+            EDIT_STOCK,
+            VIEW_STOCK_LIST,
+            DELETE_STOCK,
+            CREATE_NOM,
+            VIEW_NOM_LIST,
+            EDIT_NOM,
+            DELETE_NOM,
+            CREATE_OBJECTIF,
+            EDIT_OBJECTIF,
+            VIEW_OBJECTIF_LIST,
+            VIEW_PREVISION
+        }
+
+
+
 
         public static string removeWhiteSpacesInString(string inputString)
         {

@@ -25,13 +25,77 @@ namespace Sign_Up_Form
         public HomePage()
         {
             InitializeComponent();
+
+            
+
+             
+
             getData();
-            UserControl userControl = new UserListControl();
+            checkConnectedUserRight();  
+           // UserControl userControl = new UserListControl();
             
             
-         Main.Children.Add(userControl);
+      //   Main.Children.Add(userControl);
         }
 
+
+        public void checkConnectedUserRight()
+        {
+            if(Helpers.haveRight(Helpers.connectedUserModel.accessRights,Helpers.AppAccessRights.VIEW_USER_LIST.ToString())
+                || Helpers.haveRight(Helpers.connectedUserModel.accessRights, Helpers.AppAccessRights.ADMIN.ToString()) )
+            {
+
+                 user_button.Visibility= Visibility.Visible;
+            }
+
+            if (Helpers.haveRight(Helpers.connectedUserModel.accessRights, Helpers.AppAccessRights.VIEW_PRODUCT_LIST.ToString())
+                || Helpers.haveRight(Helpers.connectedUserModel.accessRights, Helpers.AppAccessRights.ADMIN.ToString()))
+            {
+
+                product_button.Visibility= Visibility.Visible;
+
+            }
+
+            if (Helpers.haveRight(Helpers.connectedUserModel.accessRights, Helpers.AppAccessRights.VIEW_MATIERE_LIST.ToString())
+                || Helpers.haveRight(Helpers.connectedUserModel.accessRights, Helpers.AppAccessRights.ADMIN.ToString()))
+            {
+
+                matiere_button.Visibility= Visibility.Visible;
+            }
+
+            if (Helpers.haveRight(Helpers.connectedUserModel.accessRights, Helpers.AppAccessRights.VIEW_STOCK_LIST.ToString())
+                || Helpers.haveRight(Helpers.connectedUserModel.accessRights, Helpers.AppAccessRights.ADMIN.ToString()))
+            {
+
+                stock_button.Visibility= Visibility.Visible;    
+
+            }
+
+            if (Helpers.haveRight(Helpers.connectedUserModel.accessRights, Helpers.AppAccessRights.VIEW_OBJECTIF_LIST.ToString())
+                || Helpers.haveRight(Helpers.connectedUserModel.accessRights, Helpers.AppAccessRights.ADMIN.ToString()))
+            {
+
+                objectif_button.Visibility= Visibility.Visible;
+
+            }
+
+            if (Helpers.haveRight(Helpers.connectedUserModel.accessRights, Helpers.AppAccessRights.VIEW_PREVISION.ToString())
+                || Helpers.haveRight(Helpers.connectedUserModel.accessRights, Helpers.AppAccessRights.ADMIN.ToString()))
+            {
+                prevision_button.Visibility= Visibility.Visible;
+
+            }
+
+            if (Helpers.haveRight(Helpers.connectedUserModel.accessRights, Helpers.AppAccessRights.VIEW_NOM_LIST.ToString())
+              || Helpers.haveRight(Helpers.connectedUserModel.accessRights, Helpers.AppAccessRights.ADMIN.ToString()))
+            {
+               nomenclature_button.Visibility = Visibility.Visible;
+
+            }
+
+
+
+        }
 
         public async void getData()
         {

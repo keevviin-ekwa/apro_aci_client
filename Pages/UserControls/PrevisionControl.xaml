@@ -176,12 +176,8 @@
                                     <TextBlock VerticalAlignment="Center" FontSize="15" FontWeight="ExtraBold" HorizontalAlignment="Center"  Text="{Binding Consommation}"/>
                                 </Border>
                                 <Border Style="{StaticResource productBorderStyle}" Grid.Row="2">
-                                    <StackPanel x:Name="momp" Orientation="Horizontal" >
-                                        <TextBlock x:Name="first_week" VerticalAlignment="Center" FontSize="15" FontWeight="ExtraBold" HorizontalAlignment="Center" Text="X" />
-                                        <TextBlock x:Name="second_week" VerticalAlignment="Center" FontSize="15" FontWeight="ExtraBold" HorizontalAlignment="Center"  Text="X" />
-                                        <TextBlock Name="third_week" VerticalAlignment="Center" FontSize="15" FontWeight="ExtraBold" HorizontalAlignment="Center" Text="X"/>
-                                        <TextBlock Name="fourth_week" VerticalAlignment="Center" FontSize="15" FontWeight="ExtraBold" HorizontalAlignment="Center" Text="X" />
-                                    </StackPanel>
+                                    <TextBlock x:Name="first_week" VerticalAlignment="Center" FontSize="15" FontWeight="ExtraBold" HorizontalAlignment="Center" Text="{Binding Commande}" />
+                                   
                                 </Border>
                                 <Border Style="{StaticResource productBorderStyle}" Grid.Row="3">
                                     <TextBlock VerticalAlignment="Center" FontSize="15" FontWeight="ExtraBold" HorizontalAlignment="Center"    Text="{Binding Livraison}"/>

@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Sign_Up_Form.Pages.Objectifs"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
+
               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -64,7 +65,7 @@
                             </DatePicker>
                             <TextBox
                             
-                                PreviewTextInput="NumberValidationTextBox"
+                                
                                 x:Name="objectif_grand_format"
                                 MaxWidth="600"
                                 Margin="0,30,0,0"
@@ -74,7 +75,7 @@
                                 Style="{StaticResource MaterialDesignFilledTextBox}"
                                 TextWrapping="Wrap" />
                             <TextBox
-                                PreviewTextInput="NumberValidationTextBox"
+                           
                                 x:Name="objectif_petit_format"
                                 MaxWidth="600"
                                 Margin="0,30,0,0"

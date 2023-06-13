@@ -38,6 +38,31 @@ namespace Sign_Up_Form.Services
             }
         }
 
+
+        public static async Task<ResponseObject<Stock>> UpdateStock(UpdateStockDTO stock)
+        {
+            ResponseObject<Stock> respFromServer = new ResponseObject<Stock>();
+            var url = EndPoint.updateStock;
+            var client = new HttpClient();
+
+            var response = await client.PutAsJsonAsync(url,stock);
+   
+            response.EnsureSuccessStatusCode();
+            if (response.IsSuccessStatusCode)
+            {
+
+                respFromServer = JsonConvert.DeserializeObject<ResponseObject<Stock>>(await response.Content.ReadAsStringAsync());
+                client.Dispose();
+                return respFromServer;
+            }
+            else
+            {
+                respFromServer = JsonConvert.DeserializeObject<ResponseObject<Stock>>(await response.Content.ReadAsStringAsync());
+                client.Dispose();
+                return respFromServer;
+            }
+        }
+
         public static async Task<ResponseObject<Stock>> SaveStock(StockDTO stockDTO)
         {
             ResponseObject<Stock> respFromServer = new ResponseObject<Stock>();

@@ -105,6 +105,7 @@
                 <DataGridTextColumn Header="Désignation" Binding="{Binding Matiere.Designation}" />
                 <DataGridTextColumn Header="Stock debut (en tonne)" Binding="{Binding StockDebut}" />
                 <DataGridTextColumn Header="Stock fin (en tonne)" Binding="{Binding StockFin}" />
+                <DataGridTextColumn Header="Consommation (en tonne)" Binding="{Binding Consommation}" />
                 <DataGridTextColumn Header="Mois" Binding="{Binding Mois}" />
                 <DataGridTemplateColumn x:Name="ExportStatistiquesAgenceAction" Header="Action" >
                     <DataGridTemplateColumn.CellTemplate>
@@ -117,7 +118,7 @@
         </DataGrid>
        
         <Button VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,52,22,0" Grid.ColumnSpan="2" Grid.Column="1" Click="open_stock_form" >Ajouter</Button>
-        <Label Content="Contribution par matière Première" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Height="47" Width="337" Grid.ColumnSpan="2"/>
+        <Label Content="Gestion des stocks" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Height="47" Width="337" Grid.ColumnSpan="2"/>
 
 
         <materialDesign:Snackbar x:Name="snack_bar_message" Grid.Column="1" HorizontalAlignment="Left" Margin="135,0,0,0" Grid.Row="1">

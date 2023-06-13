@@ -7,34 +7,37 @@
            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         ResizeMode="NoResize"
         mc:Ignorable="d"
+         WindowStartupLocation="CenterScreen" 
         Title="Modifier le stock" Height="450" Width="800">
     <Grid>
         <StackPanel>
-            <DatePicker
-                                
-                                x:Name="date_stock"
-                                Width="600"
-                                Margin="0,30,0,0"
-                                materialDesign:HintAssist.Hint="Selectionner un mois"
-                                materialDesign:TextFieldAssist.HasClearButton="True"
-                                Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Grid.ColumnSpan="2" >
-
-
-            </DatePicker>
-
-
-               <ComboBox x:Name="matiere_list"
-                         
-                                  Width="600"
-                                   Margin="0,30,0,0"
-                                  DisplayMemberPath="Designation"
-                                  materialDesign:HintAssist.Hint="Matière première"
-                                  materialDesign:TextFieldAssist.HasClearButton="True"
-                                  IsEditable="True"
-                                  Style="{StaticResource MaterialDesignFilledComboBox}">
-
-            </ComboBox>
             <TextBox
+                                IsEnabled="False"
+                                x:Name="date_stock"
+                                MaxWidth="600"
+                                Margin="0,30,0,0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="Mois"
+                                AcceptsReturn="True"
+                                Text=""
+                                Style="{StaticResource MaterialDesignFilledTextBox}"
+                                TextWrapping="Wrap" />
+
+            <TextBox
+                                IsEnabled="False"
+                                x:Name="matiere_premiere"
+                                MaxWidth="600"
+                                Margin="0,30,0,0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="Matiere Premiere"
+                                AcceptsReturn="True"
+                                Text=""
+                                Style="{StaticResource MaterialDesignFilledTextBox}"
+                                TextWrapping="Wrap" />
+
+
+            <TextBox
+                                Text=""
                                 x:Name="stock_debut"
                                 MaxWidth="600"
                                 Margin="0,30,0,0"
@@ -44,6 +47,7 @@
                                 Style="{StaticResource MaterialDesignFilledTextBox}"
                                 TextWrapping="Wrap" />
             <TextBox
+                                Text=""
                                 x:Name="stock_fin"
                                 MaxWidth="600"
                                 Margin="0,30,0,0"
@@ -53,8 +57,8 @@
                                 Style="{StaticResource MaterialDesignFilledTextBox}"
                                 TextWrapping="Wrap" />
             <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
-                <Button VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,52,25,0" Grid.ColumnSpan="2" Content="Enregistrer"  />
-                <Button VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,52,25,0" Grid.ColumnSpan="2" Background="Red"  Content="Annuler"  />
+                <Button VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,52,25,0" Grid.ColumnSpan="2" Content="Enregistrer" Click="save_edit_stock"  />
+                <Button VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,52,25,0" Grid.ColumnSpan="2" Background="Red"  Content="Annuler" Click="cancel_edit_stock"  />
 
             </StackPanel>
 

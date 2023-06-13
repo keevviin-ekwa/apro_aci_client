@@ -6,9 +6,10 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         FontSize="18" FontFamily="{DynamicResource MaterialDesignFont}" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent" 
+      
         mc:Ignorable="d" Height="500" Width="400">
 
-    <Grid>
+    <Grid Background="Gray">
         <StackPanel Margin="50">
             <Image  Width="96" Height="96"/>
             <Border Background="White" Margin="10 20" CornerRadius="5">

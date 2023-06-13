@@ -93,8 +93,6 @@ namespace Sign_Up_Form.Pages.UserControls
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            
-
             var selectedProduct = (Produit)product_list.SelectedItem;
             var mois = month.SelectedDate.Value;
             var nextMonth = mois.AddMonths(1).ToString("MM/yyyy");
@@ -119,46 +117,12 @@ namespace Sign_Up_Form.Pages.UserControls
                     var ListeDeStock = new List<Stock>();
                     foreach (var stock in Stocks)
                     {
-
                         ResponseObject<Matiere> matiere = await MatiereService.GetMatiereById(stock.MatiereId);
                         var mat = matiere.Data;
                         var Commande = mat.Commandes.FirstOrDefault(c => c.DateCommande.ToString("MM/yyyy") == mois.AddMonths(1).ToString("MM/yyyy"));
                         var Livraison = mat.Commandes.FirstOrDefault(c => c.DateLivraison.ToString("MM/yyyy") == mois.AddMonths(1).ToString("MM/yyyy"));
                         stock.Livraison = Livraison != null ? Livraison.Quantite : 0;
                         stock.Commande = Commande != null ? Commande.SemaineCommande : 0;
-
-                        switch (stock.Commande)
-                        {
-                            case 1:
-                                {
-                                    TextBox first_week= list_produit.FindName("fist_week") as TextBox;
-                                    first_week.Text = "X";
-                                }
-                                
-                                break;
-                            case 2:
-                                {
-                                    TextBox second_week = list_produit.FindName("second_week") as TextBox;
-                                    second_week.Text ="X";
-                                }
-                                break;
-                            case 3:
-                                {
-                                    TextBox third_week = list_produit.FindName("third_week") as TextBox;
-                                    third_week.Text = "X";
-                                }
-                                break;
-                            case 4:
-                                {
-                                    TextBox fourth_week = list_produit.FindName("fourth_week") as TextBox;
-                                    fourth_week.Text = "X";
-                                }
-                                break;
-                            default: break;
-
-
-                        }
-
                         ListeDeStock.Add(stock);
                     }
 

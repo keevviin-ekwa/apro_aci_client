@@ -1,5 +1,6 @@
 ﻿using Sign_Up_Form.DTO;
 using Sign_Up_Form.Models;
+using Sign_Up_Form.Pages.Diolog;
 using Sign_Up_Form.Services;
 using Sign_Up_Form.Utils;
 using System;
@@ -216,7 +217,9 @@ namespace Sign_Up_Form.Pages.Stocks
 
         private void edit_stock_click(object sender, RoutedEventArgs e)
         {
-            
+            Stock stock= (Stock)((Button)e.Source).DataContext;
+            EditStockDialog EditStock = new EditStockDialog(stock);
+            EditStock.ShowDialog();
         }
     }
 }

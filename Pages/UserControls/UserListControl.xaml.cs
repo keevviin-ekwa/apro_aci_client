@@ -99,7 +99,7 @@ namespace Sign_Up_Form.Pages.UserControls
         private async void Click_reset_password(object sender, RoutedEventArgs e)
         {
             User user = (User)((Button)e.Source).DataContext;
-            user.MotDePasse = "aci_lgcca";
+            user.MotDePasse = "1995";
             user.IsFirstConnection = true;
             user.DateDerniereMaj = DateTime.Now;
             ResponseObject<User> response= await UserService.UpdateUser(user);

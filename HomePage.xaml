@@ -6,6 +6,9 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Sign_Up_Form"
         mc:Ignorable="d"
+        WindowState="Maximized"
+        WindowStyle="None"
+       
         Title="HomePage" Height="450" Width="800">
     <Window.Resources>
         <ResourceDictionary>
@@ -121,59 +124,78 @@
                 <TextBlock Text="DASHBOARD" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="WS Simple Gallifreyan" Foreground="#FFBC96EA" FontSize="16"/>
             </Grid>
 
-            <StackPanel Grid.Row="1">
-                
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Product_click">
-                    <Grid Width="150">
-                        <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center"/>
-                        <TextBlock HorizontalAlignment="Center" Text="Produits" FontFamily="Champagne &amp; Limousines" Height="17" VerticalAlignment="Top"/>
-                    </Grid>
-                </Button>
+            <ListBox Grid.Row="1">
 
-                
+                <ListBoxItem>
 
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="matiere_btn_click">
-                    <Grid Width="150">
-                        <materialDesign:PackIcon Kind="TshirtCrew" VerticalAlignment="Center"/>
-                        <TextBlock HorizontalAlignment="Center" Text="Matière premières" FontFamily="Champagne &amp; Limousines"/>
-                    </Grid>
-                </Button>
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="stcok_btn_click">
-                    <Grid Width="150">
-                        <materialDesign:PackIcon Kind="TshirtCrew" VerticalAlignment="Center"/>
-                        <TextBlock HorizontalAlignment="Center" Text="Stock" FontFamily="Champagne &amp; Limousines"/>
-                    </Grid>
-                </Button>
+                    <Button x:Name="product_button" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Product_click" Visibility="Hidden">
+                        <Grid Width="150">
+                            <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center"/>
+                            <TextBlock HorizontalAlignment="Center" Text="Produits" FontFamily="Champagne &amp; Limousines" Height="17" VerticalAlignment="Top"/>
+                        </Grid>
+                    </Button>
 
+                </ListBoxItem>
 
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="nomenclature_btn_click">
-                    <Grid Width="150">
-                        <materialDesign:PackIcon Kind="TshirtCrew" VerticalAlignment="Center"/>
-                        <TextBlock HorizontalAlignment="Center" Text="Nomenclature" FontFamily="Champagne &amp; Limousines"/>
-                    </Grid>
-                </Button>
+                <ListBoxItem>
+
+                    <Button x:Name="matiere_button" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="matiere_btn_click" Visibility="Hidden">
+                        <Grid Width="150">
+                            <materialDesign:PackIcon Kind="TshirtCrew" VerticalAlignment="Center"/>
+                            <TextBlock HorizontalAlignment="Center" Text="Matière premières" FontFamily="Champagne &amp; Limousines"/>
+                        </Grid>
+                    </Button>
+                </ListBoxItem>
 
 
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Button_Click">
-                    <Grid Width="150">
-                        <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center"/>
-                        <TextBlock HorizontalAlignment="Center" Text="Utilisateurs" FontFamily="Champagne &amp; Limousines"/>
-                    </Grid>
-                </Button>
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Previson_click" >
-                    <Grid Width="150">
-                        <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center"/>
-                        <TextBlock HorizontalAlignment="Center" Text="Prévision" FontFamily="Champagne &amp; Limousines"/>
-                    </Grid>
-                </Button>
+                <ListBoxItem>
 
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Objectif_click">
-                    <Grid Width="150">
-                        <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center"/>
-                        <TextBlock HorizontalAlignment="Center" Text="Objectifs" FontFamily="Champagne &amp; Limousines"/>
-                    </Grid>
-                </Button>
-            </StackPanel>
+                    <Button x:Name="stock_button" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="stcok_btn_click" Visibility="Hidden">
+                        <Grid Width="150">
+                            <materialDesign:PackIcon Kind="TshirtCrew" VerticalAlignment="Center"/>
+                            <TextBlock HorizontalAlignment="Center" Text="Stock" FontFamily="Champagne &amp; Limousines"/>
+                        </Grid>
+                    </Button>
+
+                </ListBoxItem>
+
+                <ListBoxItem>
+                    <Button x:Name="nomenclature_button" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="nomenclature_btn_click" Visibility="Hidden">
+                        <Grid Width="150">
+                            <materialDesign:PackIcon Kind="TshirtCrew" VerticalAlignment="Center"/>
+                            <TextBlock HorizontalAlignment="Center" Text="Nomenclature" FontFamily="Champagne &amp; Limousines"/>
+                        </Grid>
+                    </Button>
+
+                </ListBoxItem>
+
+                <ListBoxItem>
+                    <Button x:Name="user_button" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Button_Click" Visibility="Hidden">
+                        <Grid Width="150">
+                            <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center"/>
+                            <TextBlock HorizontalAlignment="Center" Text="Utilisateurs" FontFamily="Champagne &amp; Limousines"/>
+                        </Grid>
+                    </Button>
+                </ListBoxItem>
+
+                <ListBoxItem>
+                    <Button x:Name="prevision_button" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Previson_click" Visibility="Hidden" >
+                        <Grid Width="150">
+                            <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center"/>
+                            <TextBlock HorizontalAlignment="Center" Text="Prévision" FontFamily="Champagne &amp; Limousines"/>
+                        </Grid>
+                    </Button>
+                </ListBoxItem>
+
+                <ListBoxItem>
+                    <Button x:Name="objectif_button" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Objectif_click" Visibility="Hidden">
+                        <Grid Width="150">
+                            <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center"/>
+                            <TextBlock HorizontalAlignment="Center" Text="Objectifs" FontFamily="Champagne &amp; Limousines"/>
+                        </Grid>
+                    </Button>
+                </ListBoxItem>
+                </ListBox>
         </Grid>
 
         <Grid x:Name="GridBarraTitulo" Grid.ColumnSpan="2" Background="#FF8522BD" MouseDown="GridBarraTitulo_MouseDown">

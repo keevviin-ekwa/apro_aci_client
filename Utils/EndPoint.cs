@@ -23,6 +23,7 @@ namespace Sign_Up_Form.Utils
 
         public const string getAllStockByMonth = Configuration.API_DOMAIN + "/Stock/Month?Month=";
         public const string saveStock = Configuration.API_DOMAIN + "/Stock";
+        public const string updateStock = Configuration.API_DOMAIN + "/Stock";
 
 
         //Endpoint objectif
