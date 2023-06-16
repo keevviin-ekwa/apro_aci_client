@@ -1,4 +1,5 @@
-﻿using Sign_Up_Form.DTO;
+﻿using System.Text.RegularExpressions;
+using Sign_Up_Form.DTO;
 using Sign_Up_Form.Models;
 using Sign_Up_Form.Services;
 using Sign_Up_Form.Utils;
@@ -38,6 +39,12 @@ namespace Sign_Up_Form.Pages.Diolog
         {
             this.Close();
         }
+
+          private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+            {
+                Regex regex = new Regex("[^0-9,-]+");
+                e.Handled = regex.IsMatch(e.Text);
+            }
 
         private async void save_edit_stock(object sender, RoutedEventArgs e)
         {

@@ -83,12 +83,13 @@ namespace Sign_Up_Form.Pages.Objectifs
 
             try
             {
+                
                 var obGF = double.Parse(objectif_grand_format.Text);
                 var obPF = double.Parse(objectif_petit_format.Text);
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Veuillez saisir des valeurs numériques");
+                MessageBox.Show("Veuillez saisir des valeurs numériques, utilisé (,) au lieu du (.)");
             }
 
            
@@ -142,7 +143,7 @@ namespace Sign_Up_Form.Pages.Objectifs
             }
             else
             {
-
+                var test = double.Parse(objectif_grand_format.Text);
 
                 var Objectif = new ObjectifDTO()
                 {
@@ -206,6 +207,10 @@ namespace Sign_Up_Form.Pages.Objectifs
             editObjectif.Show();
         }
 
-
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9,-]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
     }
 }

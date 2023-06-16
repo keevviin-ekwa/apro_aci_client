@@ -77,6 +77,7 @@
                             </ComboBox>
                             <TextBox
                                 x:Name="stock_debut"
+                                PreviewTextInput="NumberValidationTextBox"
                                 MaxWidth="600"
                                 Margin="0,30,0,0"
                                 VerticalAlignment="Center"

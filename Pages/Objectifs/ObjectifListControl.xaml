@@ -64,9 +64,9 @@
 
                             </DatePicker>
                             <TextBox
-                            
-                                
+                           
                                 x:Name="objectif_grand_format"
+                                PreviewTextInput="NumberValidationTextBox"
                                 MaxWidth="600"
                                 Margin="0,30,0,0"
                                 VerticalAlignment="Center"
@@ -75,7 +75,7 @@
                                 Style="{StaticResource MaterialDesignFilledTextBox}"
                                 TextWrapping="Wrap" />
                             <TextBox
-                           
+                                PreviewTextInput="NumberValidationTextBox"
                                 x:Name="objectif_petit_format"
                                 MaxWidth="600"
                                 Margin="0,30,0,0"

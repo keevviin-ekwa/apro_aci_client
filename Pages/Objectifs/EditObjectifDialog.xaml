@@ -39,7 +39,7 @@
                                 Style="{StaticResource MaterialDesignFilledTextBox}"
                                 TextWrapping="Wrap" />
                              <TextBox
-                               
+                               PreviewTextInput="NumberValidationTextBox"
                                 x:Name="objectif_petit_format"
                                 MaxWidth="500"
                                 Margin="0,30,0,0"

@@ -12,6 +12,7 @@
     <Grid>
         <StackPanel>
             <TextBox
+                           
                                 IsEnabled="False"
                                 x:Name="date_stock"
                                 MaxWidth="600"
@@ -24,6 +25,7 @@
                                 TextWrapping="Wrap" />
 
             <TextBox
+        
                                 IsEnabled="False"
                                 x:Name="matiere_premiere"
                                 MaxWidth="600"
@@ -37,6 +39,7 @@
 
 
             <TextBox
+                                PreviewTextInput="NumberValidationTextBox"
                                 Text=""
                                 x:Name="stock_debut"
                                 MaxWidth="600"
@@ -47,6 +50,8 @@
                                 Style="{StaticResource MaterialDesignFilledTextBox}"
                                 TextWrapping="Wrap" />
             <TextBox
+
+                                 PreviewTextInput="NumberValidationTextBox"
                                 Text=""
                                 x:Name="stock_fin"
                                 MaxWidth="600"
