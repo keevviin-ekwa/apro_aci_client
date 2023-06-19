@@ -44,6 +44,10 @@ namespace Sign_Up_Form.Utils
         public const string getAllDroits = Configuration.API_DOMAIN + "/User/GetAllDroitsAcces";
 
         public const string loginUser = Configuration.API_DOMAIN + "/Login/connectAndGetCredentials";
-        
+
+        //Commande
+
+        public const string getAllCommandes = Configuration.API_DOMAIN + "/Commande";
+        public const string deleteCommande = Configuration.API_DOMAIN + "/Commande/deleteCommande/";
     }
 }

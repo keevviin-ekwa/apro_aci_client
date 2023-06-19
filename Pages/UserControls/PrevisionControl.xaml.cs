@@ -63,7 +63,7 @@ namespace Sign_Up_Form.Pages.UserControls
                         var mat = matiere.Data;
                         var Commande = mat.Commandes.FirstOrDefault(c => c.DateCommande.ToString("MM/yyyy") == DateTime.Now.ToString("MM/yyyy"));
                         var Livraison = mat.Commandes.FirstOrDefault(c => c.DateLivraison.ToString("MM/yyyy") == DateTime.Now.ToString("MM/yyyy"));
-                        stock.Livraison = Livraison != null ? Livraison.Quantite : 0;
+                        //stock.Livraison = Livraison != null ? Livraison.Quantite : 0;
                         stock.Commande = Commande != null ? Commande.SemaineCommande : 0;
                         ListeDeStock.Add(stock);
                     }
@@ -122,7 +122,7 @@ namespace Sign_Up_Form.Pages.UserControls
                         var Commande = mat.Commandes.FirstOrDefault(c => c.DateCommande.ToString("MM/yyyy") == mois.AddMonths(1).ToString("MM/yyyy"));
                         var Livraison = mat.Commandes.FirstOrDefault(c => c.DateLivraison.ToString("MM/yyyy") == mois.AddMonths(1).ToString("MM/yyyy"));
                         stock.Livraison = Livraison != null ? Livraison.Quantite : 0;
-                        stock.Commande = Commande != null ? Commande.SemaineCommande : 0;
+                       // stock.Commande = Commande != null ? Commande.SemaineCommande : 0;
                         ListeDeStock.Add(stock);
                     }
 
@@ -183,7 +183,7 @@ namespace Sign_Up_Form.Pages.UserControls
                         var mat = matiere.Data;
                         var Commande = mat.Commandes.FirstOrDefault(c => c.DateCommande.ToString("MM/yyyy") == mois.AddMonths(-1).ToString("MM/yyyy"));
                         var Livraison = mat.Commandes.FirstOrDefault(c => c.DateLivraison.ToString("MM/yyyy") == mois.AddMonths(-1).ToString("MM/yyyy"));
-                        stock.Livraison = Livraison != null ? Livraison.Quantite : 0;
+                       // stock.Livraison = Livraison != null ? Livraison.Quantite : 0;
                         stock.Commande = Commande != null ? Commande.SemaineCommande : 0;
                         ListeDeStock.Add(stock);
                     }

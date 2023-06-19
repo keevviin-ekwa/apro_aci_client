@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Sign_Up_Form.Models;
+using Sign_Up_Form.Pages.Commandes;
 using Sign_Up_Form.Pages.MatiereProduits;
 using Sign_Up_Form.Pages.Matieres;
 using Sign_Up_Form.Pages.Objectifs;
@@ -194,6 +195,13 @@ namespace Sign_Up_Form
             Main.Children.Clear();
             UserControl objectif = new ObjectifListControl();
             Main.Children.Add(objectif);
+        }
+
+        private void commande_btn_click(object sender, RoutedEventArgs e)
+        {
+            Main.Children.Clear();
+            UserControl commande = new CommandeListUserControl();
+            Main.Children.Add(commande);
         }
     }
 

@@ -158,6 +158,15 @@
                     </Button>
 
                 </ListBoxItem>
+                <ListBoxItem>
+                    <Button x:Name="commande_button" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="commande_btn_click" >
+                        <Grid Width="150">
+                            <materialDesign:PackIcon Kind="TshirtCrew" VerticalAlignment="Center"/>
+                            <TextBlock HorizontalAlignment="Center" Text="Commandes" FontFamily="Champagne &amp; Limousines"/>
+                        </Grid>
+                    </Button>
+
+                </ListBoxItem>
 
                 <ListBoxItem>
                     <Button x:Name="nomenclature_button" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="nomenclature_btn_click" Visibility="Hidden">
